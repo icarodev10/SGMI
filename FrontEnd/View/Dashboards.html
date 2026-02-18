@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Indicadores de Sensores</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+
+    <div id="particles-js"></div>
+
+    <div id="menu-container"></div>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col text-center">
+                    <h2 class="fw-bold text-primary">Indicadores dos Sensores</h2>
+                    <p class="text-muted">Monitoramento em tempo real</p>
+                </div>
+            </div>
+
+            <!-- GRID DE DASHBOARD -->
+            <div class="dashboard-grid">
+
+                <!-- Temperatura -->
+                <div class="card-dashboard">
+                    <div class="card-header">
+                        <i class="fas fa-thermometer-half"></i>
+                        <h2>Sensor Temperatura</h2>
+                    </div>
+                    <p class="subtitle">Leituras recentes</p>
+                    <div class="status-item">
+                        <span><i class="fas fa-fire"></i> Atual</span>
+                        <span class="status-value" id="temp">-- °C</span>
+                    </div>
+                    <div class="status-item">
+                        <span><i class="fas fa-chart-line"></i> Média</span>
+                        <span class="status-value" id="mediaTemp">-- °C</span>
+                    </div>
+                    <canvas id="graficoTemp" height="120"></canvas>
+                </div>
+
+                <!-- Umidade -->
+                <div class="card-dashboard">
+                    <div class="card-header">
+                        <i class="fas fa-tint"></i>
+                        <h2>Sensor Umidade</h2>
+                    </div>
+                    <p class="subtitle">Leituras recentes</p>
+                    <div class="status-item">
+                        <span><i class="fas fa-water"></i> Atual</span>
+                        <span class="status-value" id="umid">-- %</span>
+                    </div>
+                    <div class="status-item">
+                        <span><i class="fas fa-chart-line"></i> Média</span>
+                        <span class="status-value" id="mediaUmid">-- %</span>
+                    </div>
+                    <canvas id="graficoUmid" height="120"></canvas>
+                </div>
+
+                <!-- PIR -->
+                <div class="card-dashboard">
+                    <div class="card-header">
+                        <i class="fas fa-walking"></i>
+                        <h2>Sensor PIR</h2>
+                    </div>
+                    <p class="subtitle">Detecção de movimento</p>
+                    <div class="status-item">
+                        <span><i class="fas fa-bullseye"></i> Estado</span>
+                        <span class="status-value" id="pir_status">--</span>
+                    </div>
+                    <div class="status-item">
+                        <span><i class="fas fa-list"></i> Total</span>
+                        <span class="status-value" id="pir_total">--</span>
+                    </div>
+                    <canvas id="graficoPir" height="120"></canvas>
+                </div>
+
+                <!-- Estoque -->
+                <div class="card-dashboard">
+                    <div class="card-header">
+                        <i class="fas fa-box"></i>
+                        <h2>Estoque</h2>
+                    </div>
+                    <p class="subtitle">Status de peças</p>
+                    <div class="status-item">
+                        <span><i class="fas fa-archive"></i> Atual</span>
+                        <span class="status-value" id="estoque_Detc">--</span>
+                    </div>
+                    <canvas id="graficoEstoque" height="120"></canvas>
+                </div>
+
+                <!-- Vibração -->
+                <div class="card-dashboard">
+                    <div class="card-header">
+                        <i class="fas fa-vial"></i>
+                        <h2>Vibração</h2>
+                    </div>
+                    <p class="subtitle">Análise do sensor</p>
+                    <div class="status-item">
+                        <span><i class="fas fa-wave-square"></i> Média</span>
+                        <span class="status-value" id="vibracao">--</span>
+                    </div>
+                    <canvas id="graficoVibracao" height="120" class="color"></canvas>
+                </div>
+
+                <!-- luminosidade -->
+                <div class="card-dashboard">
+                    <div class="card-header">
+                        <i class="fa-solid fa-lightbulb"></i>
+                        <h2>Luminosidade</h2>
+                    </div>
+                    <p class="subtitle">Leituras recentes</p>
+                    <div class="status-item">
+                        <span><i class="fas fa-wave-square"></i> Média</span>
+                        <span class="status-value" id="luminosidade">--</span>
+                    </div>
+                    <canvas id="graficoLuminosidade" height="120" class="color"></canvas>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!--  Particula  -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script src="../JS/Dashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module">
+        import { loadMenu } from '../components/menu.js';
+        document.addEventListener("DOMContentLoaded", () => {
+            loadMenu();
+        });
+    </script>
+</body>
+
+</html>

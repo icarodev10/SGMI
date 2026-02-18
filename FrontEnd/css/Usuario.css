@@ -1,0 +1,623 @@
+/**Header*/
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+/** 
+- VH Define largura e altura totais da viewport */
+body {
+    font-family: 'Sora', sans-serif;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: #efefef;
+    max-width: 100%;
+}
+
+/* Deixa o scroll mais suave da web*/
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    width: 100%;
+}
+
+#button_cascata {
+    color: #284058;
+}
+
+/*--------------------------------------------------Header 1---------------------------------------------------*/
+#header-desktop {
+    background-color: #2C3E50;
+    height: 60px;
+}
+
+
+.nav-item .nav-link {
+    color: rgb(255, 255, 255) !important;
+    position: relative;
+    padding-bottom: 5px;
+    font-weight: bold;
+
+}
+
+/* Linha animada no hover */
+.nav-item .item-navegacao::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: rgb(255, 255, 255);
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-item .item-navegacao:hover::after {
+    width: 100%;
+}
+
+#login-icon {
+    margin-top: 8px;
+}
+
+#login-icon a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.nav-item {
+    margin: -10px 40px 0 0;
+}
+
+.navbar-brand img {
+    margin-top: -20px;
+    max-width: 60%;
+}
+
+/*--------------------------------------------------Header 2---------------------------------------------------*/
+
+/* Seção geral */
+.gm {
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+/* Container principal */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* PERMITE QUEBRE LINHA */
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    gap: 10px; /* espaço entre elementos ao quebrar linha */
+}
+
+
+
+/* Título */
+.titulo1 {
+    width: 40%;
+    font-weight: bold;
+    flex: 1; /* ocupa espaço flexível */
+    min-width: 200px;
+}
+
+/* Área dos botões */
+.geral {
+    
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    flex-wrap: wrap;
+    flex: 1; /* divide o espaço com o título */
+    min-width: 280px; /* evita quebrar botão */
+}
+
+/* BOTÕES */
+#button_cascata,
+#exportDropdown,
+#button-pdf,
+#buttonf {
+    min-width: 90px; /* garante que não distorçam */
+}
+
+/* Estilos originais mantidos */
+#button_cascata {
+    background-color: #86b499;
+    color: #efefef;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    width: 90px;
+    box-shadow: 2px 2px #3e3e3e;
+    margin: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+#exportDropdown {
+    box-shadow: 2px 2px #3e3e3e;
+    background-color: #157347;
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+
+#exportDropdown:hover {
+    background-color: #125e3b; 
+    transform: scale(1.02); 
+}
+
+#button-pdf {
+    box-shadow: 2px 2px #3e3e3e;
+    background-color: #E23C41;
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+
+#button-pdf:hover {
+    background-color: #cc383d; 
+    transform: scale(1.02); 
+}
+
+#button_cascata:hover {
+    background-color: #779e87;
+    transform: scale(1.02); 
+}
+
+/* Filtro */
+#filterDropdown {
+    color: #758e9f;
+}
+
+#filterDropdown:hover {
+    color: #687d8b;
+}
+
+#buttonf {
+    background-color: #2C3E50;
+    border: none;
+}
+
+/* ------------------ RESPONSIVIDADE EXTRA ------------------ */
+
+/* Entre 900px e 1200px — botão não escapa */
+@media (max-width: 1200px) {
+    .container {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .titulo1, .geral {
+        justify-content: center;
+    }
+}
+
+/* Menor que 900px — botões ficam abaixo do título */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .geral {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+
+#button-cascata {
+    padding-left: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+#button_cascata_historic {
+    padding-left: 15px;
+    display: flex;
+    gap: 5px;
+    width: 100px;
+}
+
+.icons a {
+    display: flex;
+    gap: 14px;
+    color: #758e9f;
+    text-decoration: none;
+}
+
+.mini {
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.icons2 a {
+    display: flex;
+    gap: 14px;
+    color: #284058;
+    text-decoration: none;
+}
+
+#texto {
+    cursor: pointer;
+}
+
+#button_cascata2 {
+    color: #efefef;
+    border: none;
+    cursor: pointer;
+    background: none;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2px;
+}
+
+#button_cascata3 {
+    color: #efefef;
+    border: none;
+    cursor: pointer;
+    background: none;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+
+}
+
+#button_cascata2 {
+    font-size: 20px;
+}
+
+#titlepage {
+    margin: 4% 0 3% 4%
+}
+
+li {
+    list-style: none;
+}
+
+
+/*--------------------------------------------------Tabela---------------------------------------------------*/
+.geral {
+    display: flex;
+    gap: 5px;
+
+}
+
+#button_cascata2 {
+    color: #efefef;
+    border: none;
+    cursor: pointer;
+    background: none;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2px;
+}
+
+#button_cascata2 {
+    font-size: 20px;
+}
+
+
+#total{
+    background: #2c3e50;
+    border: none;
+    color: #ccc;
+    border-radius: 10px;
+}
+
+
+.table-container {
+    width: 100%;
+    max-width: 97%;
+    background: #2c3e50;
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 3px;
+    text-align: left;
+}
+
+#vanechline {
+    border: none;
+    width: 20px;
+    text-align: left;
+}
+
+th {
+    background-color: #2c3e50;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+}
+
+td {
+    background-color: #F9F9F9;
+}
+
+.status-dropdown {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+.center {
+    text-align: center;
+    padding: 0;
+    width: 100px;
+}
+
+/* Centraliza os botões e remove a borda */
+.center button,
+.imagem-coluna button {
+    display: inline-flex;            /* Mantém o ícone no centro */
+    align-items: center;             /* Centraliza verticalmente */
+    justify-content: center;         /* Centraliza horizontalmente */
+    margin: 2px;
+    background: none;                /* Sem fundo */
+    border: none;                    /* Remove a borda preta */
+    cursor: pointer;
+    font-size: 25px;                  /* Tamanho unificado */
+}
+
+td {
+    border-bottom: none;
+}
+
+.center {
+    border-bottom: none;
+}
+
+/* Cores específicas por ID */
+#deleteBtn {
+    color: red;
+}
+
+#editBtn {
+    color: #284058;
+}
+
+#viewImagebtn{
+    color:#284058;
+}
+
+#smalcolum {
+    width: 40px;
+    height: 10px;
+}
+
+table td:nth-child(5),
+table th:nth-child(5) {
+    max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+table td:nth-child(4),
+table th:nth-child(4) {
+    max-width: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+table td:nth-child(16),
+table th:nth-child(16) {
+    max-width: 90px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+table td:nth-child(17),
+table th:nth-child(17) {
+    max-width: 90px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+table td:nth-child(6),
+table th:nth-child(6) {
+    max-width: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+table td:nth-child(3),
+table th:nth-child(3) {
+    max-width: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+table td:nth-child(10),
+table th:nth-child(10) {
+    max-width: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+#inputSenha {
+    outline: 0;
+}
+
+
+#senhadiv i {
+    cursor: pointer;
+    position: absolute;
+    right: 5%;
+    padding: 10px;
+}
+
+#senhadiv {
+    position: relative;
+    display: flex;
+}
+
+.modal-body {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.modal-content {
+    width: 600px;
+}
+
+#save {
+    background-color: #2c3e50;
+}
+
+
+/*--------------------------------------------------Button---------------------------------------------------*/
+
+#button_main {
+    display: flex;
+    flex-direction: column;
+}
+
+.page-line {
+    width: 30px;
+    height: 5px;
+    background-color: gray;
+    border: none;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+.active-line {
+    background-color: blue;
+}
+
+.arrow-btn {
+    font-size: 20px;
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.arrow-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#save {
+    background-color: #284058;
+    color: white;
+}
+
+/* Estilo para a coluna do botão de imagem */
+#imagemColuna {
+    text-align: center;
+    /* Centraliza o conteúdo da célula */
+}
+
+/* Novo estilo para o modal de imagem usando IDs */
+#imagemModal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 50px;
+}
+
+#modalContentImagem {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#modalHeaderImagem {
+    padding: 10px 16px;
+    background-color: #2c3e50;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#modalTitleImagem {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+#closeModalBtn {
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#closeModalBtn:hover,
+#closeModalBtn:focus {
+    color: #ccc;
+    text-decoration: none;
+}
+
+#modalBodyImagem {
+    padding: 10px 16px;
+    text-align: center;
+    /* Centraliza a imagem no corpo do modal */
+}
+
+#imagemAtivoModal {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+#particles-js {
+  position: fixed; /* Fixa na tela, não rola com o conteúdo */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Essencial: coloca o canvas atrás de todo o resto */
+}

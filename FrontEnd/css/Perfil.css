@@ -1,0 +1,327 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sora', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    width: 100%;
+    background-color: #efefef;
+    max-width: 100%;
+}
+
+.icon {
+    position: absolute;
+    top: 10px;
+    /* Ajuste para posicionar corretamente */
+    left: 10px;
+    /* Ajuste para posicionar corretamente */
+    width: 15px;
+    height: 15px;
+    z-index: 10;
+}
+
+.icon a {
+    color: #efefef;
+    /* Ajuste a cor se necessário */
+    text-decoration: none;
+    z-index: 10;
+}
+
+.icon i {
+    font-size: 14px;
+    /* Ajuste o tamanho da seta */
+    z-index: 10;
+}
+
+.background {
+    position: absolute;
+    width: 30%;
+    height: 100vh;
+    background-color: #2C3E50;
+    left: 0;
+    top: 0;
+}
+
+.main-container {
+    display: flex;
+    align-items: center;
+    width: 800px;
+    height: 450px;
+    position: relative;
+}
+
+
+.profile-card {
+    position: absolute;
+    left: 13%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 2px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 350px;
+    width: 300px;
+    flex-direction: row;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.nome {
+    display: flex;
+    flex-direction: column; /* empilha verticalmente */
+    align-items: center;    /* centraliza o conteúdo */
+    gap: 4px;               /* espaçamento entre nome e cargo */
+    font-family: 'Sora', sans-serif;
+    font-weight: bold;
+}
+
+#nome {
+    font-size: 10px;
+}
+
+#cargo {
+    font-size: 1rem;
+    font-weight: normal; /* opcional: cargo mais leve que o nome */
+    color: gray;
+}
+
+
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.logoff {
+    margin-top: 20px;
+}
+
+.logoff-btn {
+    text-decoration: none;
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.logoff-btn:hover {
+    color: #c0392b;
+}
+
+
+
+#profile-pic {
+    width: 150px;
+    /* ou o tamanho que você quiser */
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+button {
+    margin-top: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.profile-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-card #profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #ccc;
+    border: 1px solid black;
+}
+
+.profile-card h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15%;
+}
+
+.profile-card span {
+    display: block;
+    color: gray;
+    font-size: 12px;
+    letter-spacing: 2px;
+    align-items: end;
+
+}
+
+.profile-card button {
+    margin-top: 15px;
+    padding: 8px 12px;
+    background-color: #2C3E50;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.profile-card button:hover {
+    background-color: #1a1f27;
+}
+
+.form-section {
+    width: 1000px;
+    margin-top: 2%;
+    padding: 40px;
+    margin-left: 30%;
+}
+
+.form-section h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 300px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#threediv {
+    display: flex;
+    gap: 40px;
+}
+
+/*formulario UPDAte e Del*/
+#update-perfil {
+    display: flex;
+}
+
+#buttonupdate {
+    margin-top: 23%;
+    display: flex;
+    justify-content: center;
+    background-color: #284058;
+    border: none;
+    font-size: 17px;
+}
+
+#button_update button {
+    width: 100%;
+    height: 40px;
+}
+
+#open-delete-modal-btn {
+    margin-top: 7%;
+    display: flex;
+    justify-content: center;
+    background-color: #EB3406;
+    border: none;
+    font-size: 20px;
+}
+
+#open-delete-modal-btn button {
+    width: 100%;
+    height: 40px;
+}
+
+#buttons {
+    display: flex;
+    gap: 15px;
+}
+
+/*--------------------------------------------------Modal---------------------------------------------------*/
+
+
+#Corpo_modelo {
+    margin: 0;
+    padding: 15px 15px 15px 15px;
+}
+
+#principal_modelo {
+    display: flex;
+}
+
+#inputAddress {
+    margin: 50px;
+}
+
+#Corpo_modelo {
+    margin-bottom: 0rem !important;
+}
+
+#rodape_modelo button {
+    margin: 0 10px;
+    gap: 15px;
+}
+
+#save_cadastro {
+    background-color: #284058;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+#logoff {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#logoff a {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+#logoff a:hover {
+    background-color: rgb(139, 139, 139);
+}
+
+#logoff i {
+    font-style: normal; /* remove o itálico */
+    letter-spacing: 1px;
+}

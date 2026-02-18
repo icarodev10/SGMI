@@ -1,0 +1,392 @@
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    color: white;
+    background: #071929; /* fundo sólido escuro */
+}
+
+/* Estilizando as labels */
+label {
+    color: white;
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.background_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(6, 18, 30, 0.1), #06121e), url("../View/img/Fundo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+.imagem-fundo {
+    width: 100%;
+    margin: 0;
+    height: 100vh;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+.imagem-logo {
+    width: 230px;
+    margin: 0;
+}
+
+/* Botão */
+#botao {
+    background-color: #284058;
+    border-color: #284058;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+/* Aplicando hover no Botão */
+#botao:hover {
+    background-color: #28405898;
+    border-color: #28405898;
+}
+
+/* Centralizando o conteúdo e limitando a largura */
+#container_principal {
+    max-width: 600px;
+}
+
+/* Ajustando o formulário */
+#formulario {
+    max-width: 400px;
+    width: 100%;
+    border-radius: 15px;
+    background-color: #0D1C2B;
+    border: 1px solid rgb(189, 189, 189);
+}
+
+/* Ajustando o checkbox */
+#caixa {
+    font-size: 16px;
+    margin-left: 0px;
+}
+
+:root {
+    --background: #071929;
+    --foreground: #F0F9FF;
+    --muted-foreground: #94a3b8;
+    --primary: #2b5486;
+    --accent: #89C5E3;
+    --card-bg: rgba(14, 25, 41, 0.6);
+    --card-border: rgba(5, 22, 36, 0.6);
+    --radius: 12px;
+    --transition-fast: 0.2s ease;
+    --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* =========================================
+   SPLASH SCREEN
+   ========================================= */
+.splash-container {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background);
+}
+
+.splash-overlay {
+    position: absolute;
+    inset: 0;
+    background: #071929; /* fundo sólido escuro */
+    opacity: 1;
+}
+
+
+.splash-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.splash-content.dissolving {
+    animation: dissolve 0.8s forwards;
+}
+
+/* Triângulo SVG */
+.triangle-wrapper svg path {
+    animation: draw-triangle 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.triangle-wrapper {
+    filter: drop-shadow(0 0 15px #23344c);
+}
+
+/* Texto do Splash */
+.text-wrapper {
+    text-align: center;
+    opacity: 0;
+    animation: fade-in 0.8s forwards;
+    animation-delay: 1.2s;
+}
+
+.brand-name {
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: #bdeeff;
+    /* cyan-bright */
+    text-shadow: 0 0 20px rgba(19, 49, 59, 0.4);
+}
+
+.brand-line {
+    margin-top: 1rem;
+    height: 1px;
+    width: 12rem;
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+}
+
+/* Dots de Loading */
+.loading-dots {
+    display: flex;
+    gap: 0.5rem;
+    opacity: 0;
+    animation: fade-in 0.5s forwards;
+    animation-delay: 1.5s;
+}
+
+.dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--primary);
+    animation: pulse-cyan 1.5s infinite;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* -----------------------------------------
+   MAIN WRAPPER
+   ----------------------------------------- */
+.hidden {
+    display: none !important
+}
+
+.main-wrapper {
+    min-height: 100vh;
+    position: relative;
+    z-index: 10
+}
+
+.container-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    min-height: 100vh;
+    z-index: 10
+}
+
+
+/* Transição de fade para o container inteiro da splash */
+.splash-container {
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+/* Classe aplicada pelo JS para iniciar fade-out */
+.splash-container.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+/* ANIMAÇÃO do triângulo */
+@keyframes draw-triangle {
+    from {
+        stroke-dashoffset: 300;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* fade-in global */
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* pulso dos dots */
+@keyframes pulse-cyan {
+    0% { transform: scale(1); opacity: 0.4; }
+    50% { transform: scale(1.3); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.4; }
+}
+
+/* FIM — Splash fade transparente */
+.splash-container {
+    opacity: 1;
+    transition: opacity 0.8s ease;
+}
+
+.splash-container.fade-out {
+    opacity: 0 !important;
+    pointer-events: none;
+}
+
+/* anima o desenho do SVG */
+.svg-draw {
+    stroke-dasharray: 140;
+    stroke-dashoffset: 140;
+    animation: draw-line 1.8s ease forwards;
+}
+
+/* delays diferentes para cada parte animar em sequência */
+.svg-draw:nth-child(1) { animation-delay: 0.1s; } /* triângulo */
+.svg-draw:nth-child(2) { animation-delay: 0.4s; }
+.svg-draw:nth-child(3) { animation-delay: 0.7s; }
+.svg-draw:nth-child(4) { animation-delay: 1s; }
+
+@keyframes draw-line {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+/* FADE PADRÃO */
+.splash-container {
+  opacity: 1;
+  background-color: #071929; /* Garante que o fundo é escuro */
+  transition: opacity 0.9s ease;
+}
+
+/* FADE-OUT CORRETO (ESCURO → TRANSPARENTE) */
+.splash-container.fade-out {
+  opacity: 0;
+  background-color: transparent !important;
+  pointer-events: none;
+}
+
+
+/* keyframes para desenhar */
+@keyframes draw-line {
+  from { stroke-dashoffset: var(--path-len, 1000); }
+  to   { stroke-dashoffset: 0; }
+}
+
+/* estado inicial (sem animar) */
+#cypher-triangle .svg-draw {
+  stroke-dashoffset: 0; /* será sobrescrito pelo JS */
+  stroke-dasharray: 0;  /* será sobrescrito pelo JS */
+  /* evita animação antes do JS preparar */
+  animation: none;
+  transition: none;
+}
+
+/* quando o JS adicionar .animate, a animação roda */
+#cypher-triangle .svg-draw.animate {
+  animation-name: draw-line;
+  animation-duration: 1.6s;
+  animation-timing-function: cubic-bezier(.4,0,.2,1);
+  animation-fill-mode: forwards;
+  /* delay será aplicado inline pelo JS: element.style.animationDelay */
+}
+
+/* exemplo de glow/estética */
+#cypher-triangle g {
+  filter: drop-shadow(0 6px 18px rgba(189, 238, 255, 0.06));
+}
+
+
+/* ============================
+   ANIMAÇÃO 2.0 — DESENHO PREMIUM
+   ============================ */
+
+.svg-draw {
+    stroke-dasharray: 260;
+    stroke-dashoffset: 260;
+    animation: draw-line-20 1.4s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+    opacity: 0;
+}
+
+/* Triângulo — anima primeiro, mais suave */
+.svg-draw:first-of-type {
+    animation: draw-triangle 1.2s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+    opacity: 1;
+}
+
+/* Delays refinados nas linhas */
+.svg-draw:nth-of-type(2) { animation-delay: 0.35s; }
+.svg-draw:nth-of-type(3) { animation-delay: 0.65s; }
+.svg-draw:nth-of-type(4) { animation-delay: 0.95s; }
+
+/* ======== Keyframes premium ======== */
+
+@keyframes draw-triangle {
+    0%   { stroke-dashoffset: 260; opacity: 0.2; }
+    10%  { opacity: 1; }
+    60%  { stroke-dashoffset: 20; }
+    100% { stroke-dashoffset: 0; opacity: 1; }
+}
+
+@keyframes draw-line-20 {
+    0%   { stroke-dashoffset: 260; opacity: 0.2; }
+    20%  { opacity: 1; }
+    70%  { stroke-dashoffset: 30; }
+    100% { stroke-dashoffset: 0; opacity: 1; }
+}
+
+/* ============================
+   FADE DO SPLASH (ESCURECIDO)
+   ============================ */
+.splash-container {
+    opacity: 1;
+    background-color: #071929;   /* mantém escuro durante o fade */
+    transition: opacity 0.8s ease;
+}
+
+.splash-container.fade-out {
+    opacity: 0 !important;
+    background-color: transparent !important;
+    pointer-events: none;
+}
+
+

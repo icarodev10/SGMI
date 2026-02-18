@@ -1,0 +1,1035 @@
+* {
+  margin: 0;
+
+  box-sizing: border-box;
+}
+
+body {
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+.logo {
+  width: 150px;
+  margin-bottom: 40px;
+}
+
+.navLinks {
+  list-style: none;
+  width: 100%;
+  padding: 0;
+}
+
+
+.navLinks li {
+  margin: 20px 0;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  display: block;
+  padding: 10px;
+  transition: background 0.3s;
+}
+
+.navLinks a:hover {
+  background-color: #33334d;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.rowcadastro {
+  display: flex;
+  justify-content: space-between;
+}
+
+.msgBemvindo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboardsDiv h2 {
+  text-align: start;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.chart-box {
+  background: white;
+  padding: 20px;
+  margin: 20px 0 40px 0;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 25%;
+}
+
+canvas {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.table-container {
+  width: 100%;
+  background: #2c3e50;
+  padding: 0 0 0 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.2);
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 3px;
+  text-align: left;
+}
+
+#vanechline {
+  border: none;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #2c3e50;
+  color: white;
+}
+
+td {
+  background-color: #f9f9f9;
+}
+
+.status-dropdown {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#smalcolum {
+  width: 40px;
+
+}
+
+#center {
+  display: flex;
+  gap: 5px;
+}
+
+.preenchimento {
+  height: 20px;
+}
+
+
+#header-desktop {
+  background-color: #2C3E50;
+  height: 60px;
+}
+
+
+.nav-item .nav-link {
+  color: rgb(255, 255, 255) !important;
+  position: relative;
+  padding-bottom: 5px;
+  font-weight: bold;
+
+}
+
+/* Linha animada no hover */
+.nav-item .item-navegacao::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: rgb(255, 255, 255);
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-item .item-navegacao:hover::after {
+  width: 100%;
+}
+
+#login-icon {
+  margin-top: 8px;
+}
+
+#login-icon a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+
+
+.nav-item {
+  margin: -10px 40px 0 0;
+}
+
+.navbar-brand img {
+  margin-top: -20px;
+  max-width: 60%;
+}
+
+/*fim do header*/
+
+/* ____________________________________________________Banner_______________________________________________________ */
+
+/* Box principal */
+.welcome-section {
+  position: relative;
+  height: 40vh;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  max-width: 1300px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin: 2rem auto;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+    rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.welcome-section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Imagem de fundo */
+.welcome-bg {
+  position: absolute;
+  inset: 0;
+  background: url("../View/img/Banner (5).svg") center/cover no-repeat;
+  z-index: 1;
+}
+
+/* Overlay escuro */
+.welcome-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+/* Conteúdo */
+.welcome-content {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  color: white;
+  width: 100%;
+}
+
+/* Texto */
+.welcome-text h1 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+  color: #f9f9f9;
+}
+
+.welcome-text p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.welcome-features {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.welcome-features span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.welcome-features i {
+  font-size: 1rem;
+}
+
+/* Cards */
+.welcome-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.rotating-cards {
+  position: relative;
+  overflow: hidden;
+}
+
+.cards-carousel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+}
+
+.cards-group {
+  display: flex;
+  gap: 1.5rem;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  transform: scale(0.85) translateY(30px);
+  filter: blur(8px);
+  transition: all 1s ease;
+}
+
+.cards-group.active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  filter: blur(0);
+}
+
+.cards-group.exit {
+  opacity: 0;
+  transform: scale(0.85) translateY(-30px);
+  filter: blur(8px);
+}
+
+
+
+
+/* Títulos e cores */
+h1,
+h2,
+h3 {
+  color: #192737;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.8rem;
+  margin-bottom: 12px;
+}
+
+
+/* Cores base e fundo dos cards */
+.bg-sensor {
+  background: linear-gradient(135deg, #1c2e4a, #2a4b68);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(6px);
+}
+
+/* Efeito de "hover" suave */
+.bg-sensor:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(95, 137, 158, 0.3);
+}
+
+/* Título principal */
+h2.fw-bold.text-primary {
+  color: #5f899e !important;
+  font-size: 2.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Ícones e títulos dos cards */
+.card-title {
+  font-size: 1.4rem;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+/* Estilo dos valores */
+.card-body p.fs-4 {
+  color: #ffffff;
+  margin: 0;
+
+}
+
+/* Títulos das métricas */
+.card-body h6 {
+  font-weight: 600;
+  color: #cfd8dc;
+}
+
+/* Canvas animado */
+canvas {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 4px;
+}
+
+@media (max-width: 768px) {
+  h2.fw-bold.text-primary {
+    font-size: 2rem;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  p.fs-4 {
+    font-size: 1.3rem !important;
+  }
+}
+
+section {
+  animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+/*2 section*/
+/* Container geral (grid adaptável) */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  padding: 1.5rem;
+  padding-left: 7rem;
+  padding-right: 7rem;
+}
+
+@media (min-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Card principal */
+.card-dashboard {
+  border-radius: 16px;
+  background: linear-gradient(135deg, #1c2e4a, #2a4b68);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.25rem;
+  color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-dashboard:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 0 25px rgba(95, 137, 158, 0.3);
+}
+
+/* Cabeçalho do card */
+.card-dashboard .card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.card-dashboard .card-header i {
+  font-size: 1.3rem;
+  animation: pulseIcon 2s infinite;
+}
+
+.card-dashboard .card-header h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Subtítulo */
+.card-dashboard p.subtitle {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #cfd8dc;
+  margin-bottom: 0.75rem;
+}
+
+/* Itens internos (campos de status) */
+.card-dashboard .status-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.card-dashboard .status-item span {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.card-dashboard .status-item i {
+  font-size: 0.9rem;
+}
+
+/* Hover leve nos campos internos */
+.card-dashboard .status-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.03);
+}
+
+/* Valores à direita */
+.card-dashboard .status-value {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Ícones animados */
+@keyframes pulseIcon {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+}
+
+h2 {
+  color: #f9f9f9;
+}
+
+#particles-js {
+  position: fixed; /* Fixa na tela, não rola com o conteúdo */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Coloca o canvas atrás de todo o resto */
+}
+
+.btn-gemini {
+    background-color: transparent;
+    border: 1px solid #0d6efd; /* Azul padrão do sistema */
+    color: #0d6efd;
+    padding: 2px 10px; 
+    font-size: 0.7rem; /* Tamanho da fonte pequeno */
+    font-weight: 500;
+    border-radius: 20px; /* Formato de "pílula" */
+    margin-left: auto;  /* Alinha o botão à direita dentro do item */
+    transition: all 0.3s ease;
+
+    /* O botão começa invisível */
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.8);
+}
+
+.ativo-alerta-item:hover .btn-gemini {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.btn-gemini:hover {
+    background-color: #0d6efd;
+    color: #ffffff;
+}
+
+.modal-content-ai {
+    background: linear-gradient(135deg, #1c2e4a, #2a4b68);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-radius: 16px;
+}
+
+.modal-content-ai .modal-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-content-ai hr {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+#gemini-response .spinner-border {
+    width: 3rem;
+    height: 3rem;
+    color: #0d6efd;
+}
+
+/* Estilos para a lista dinâmica de ativos com alerta E BARRA DE ROLAGEM */
+#ativos-com-alerta-container {
+    margin-top: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 0.5rem;
+    
+    /*Limita a altura e ativa a barra de rolagem */
+    max-height: 110px; /* Altura máxima para ~2-3 itens. Ajuste conforme necessário. */
+    overflow-y: auto;  /* A barra de rolagem vertical só aparece se o conteúdo exceder a altura máxima. */
+    padding-right: 8px; /* Espaço para a barra de rolagem não sobrepor o conteúdo. */
+}
+
+.ativo-alerta-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.ativo-alerta-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.03);
+}
+
+.ativo-alerta-item .info span {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+}
+
+.ativo-alerta-item .info .asset-name {
+    font-weight: 600;
+}
+
+.ativo-alerta-item .info .asset-status {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* Estilos para a resposta formatada da IA no Modal */
+.ai-response-formatted {
+    text-align: left;
+}
+
+.ai-response-formatted h6 {
+    color: #0d6efd;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+}
+
+.ai-response-formatted ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.ai-response-formatted ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #cfd8dc;
+}
+
+.ai-response-formatted ul li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: #0d6efd;
+    font-weight: bold;
+    font-size: 1.4em;
+    line-height: 1;
+}
+
+/* Estilização da barra de rolagem para Webkit (Chrome, Safari, etc.) */
+#ativos-com-alerta-container::-webkit-scrollbar {
+  width: 6px; /* Largura da barra */
+}
+
+#ativos-com-alerta-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2); /* Fundo da trilha */
+  border-radius: 10px;
+}
+
+#ativos-com-alerta-container::-webkit-scrollbar-thumb {
+  background-color: #0d6efd; /* Cor da barra */
+  border-radius: 10px;
+  border: 2px solid transparent; /* Cria um preenchimento em volta da barra */
+  background-clip: content-box;
+}
+
+#ativos-com-alerta-container::-webkit-scrollbar-thumb:hover {
+  background-color: #0b5ed7; /* Cor da barra ao passar o mouse */
+}
+
+/* --- Estilos para o Chatbot SGMI --- */
+:root {
+  --sgmi-accent-1: #2b5486;   /* pode ser ajustado para combinar com seu tema */
+  --sgmi-accent-2: #47b0ff;
+  --sgmi-bg: #ffffff;
+  --sgmi-contrast: #23344c;
+  --sgmi-shadow: 0 10px 30px rgba(9,20,42,0.08);
+  --sgmi-badge: #ff5b5b;
+}
+
+/* Root container: fixado no canto inferior direito */
+.sgmi-chatbot-root {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 9999; 
+  font-family: inherit;
+  pointer-events: none; /* permite interação apenas nos elementos filhos */
+}
+
+/* Botão principal */
+.sgmi-chatbot-btn {
+  --size: 72px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  border: none;
+  display: inline-grid;
+  place-items: center;
+  background: linear-gradient(140deg, var(--sgmi-accent-1), var(--sgmi-accent-2));
+  box-shadow: var(--sgmi-shadow);
+  cursor: pointer;
+  transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms;
+  pointer-events: auto;
+  position: relative;
+  outline: none;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* small accessibility focus ring but subtle */
+.sgmi-chatbot-btn:focus {
+  box-shadow: 0 0 0 6px rgba(71,176,255,0.12), var(--sgmi-shadow);
+  transform: translateY(-2px) scale(1.01);
+}
+
+/* hover micro-tilt + glow */
+.sgmi-chatbot-btn:hover {
+  transform: translateY(-4px) rotate(-1deg) scale(1.02);
+}
+
+/* breathing animation to indicate "listening/idle" */
+@keyframes sgmi-breathe {
+  0% { transform: scale(1); box-shadow: 0 6px 22px rgba(9,20,42,0.06); }
+  50% { transform: scale(1.03); box-shadow: 0 14px 40px rgba(9,20,42,0.12); }
+  100% { transform: scale(1); box-shadow: 0 6px 22px rgba(9,20,42,0.06); }
+}
+.sgmi-chatbot-btn.sgmi-idle {
+  animation: sgmi-breathe 3000ms ease-in-out infinite;
+}
+
+/* Icon sizing inside button */
+.sgmi-chatbot-icon {
+  width: 52%;
+  height: 52%;
+  display: block;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.08));
+}
+
+/* status badge (top-right on the button) */
+.sgmi-chatbot-badge {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--sgmi-badge);
+  box-shadow: 0 3px 8px rgba(37,50,80,0.08);
+  opacity: 0.95;
+  transform: translateZ(0);
+}
+
+/* Modal (kept minimal; hidden by default) */
+.sgmi-chatbot-modal {
+  position: fixed;
+  right: 22px;
+  bottom: calc(22px + 88px); /* acima do botão */
+  width: clamp(280px, 38vw, 520px);
+  max-height: 72vh;
+  display: none; /* toggled by JS */
+  pointer-events: auto;
+  z-index: 10000;
+}
+.sgmi-chatbot-modal[aria-hidden="false"] { display: block; }
+
+/* Panel */
+.sgmi-chatbot-modal-panel {
+  background: var(--sgmi-bg);
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(9,20,42,0.12);
+  overflow: hidden;
+  border: 1px solid rgba(34,52,76,0.04);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.sgmi-chatbot-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(34,52,76,0.04);
+}
+.sgmi-chatbot-modal-header h3 {
+  margin: 0;
+  font-size: 15px;
+  color: var(--sgmi-contrast);
+}
+
+/* Body */
+.sgmi-chatbot-modal-body {
+  padding: 14px;
+  overflow: auto;
+}
+
+/* Close button */
+.sgmi-chatbot-close {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: var(--sgmi-contrast);
+}
+
+/* Small responsive tweak for tiny phones */
+@media (max-width:420px){
+  .sgmi-chatbot-root { right: 14px; bottom: 14px; }
+  .sgmi-chatbot-btn { --size: 62px; }
+  .sgmi-chatbot-modal { width: calc(100% - 28px); right: 14px; left: 14px; bottom: 88px; }
+}
+
+
+/* --- Estilos para o Chatbot Assistente --- */
+
+
+.ai-fab {
+    position: fixed;
+    bottom: 30px;
+    right: 15px;
+    width: 90px;
+    height: 100px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.ai-fab:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-out;
+}
+
+.ai-robot-mascot {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    animation: mascot-float 5s infinite ease-in-out; 
+}
+
+.ai-robot-shadow {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    width: 60%;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    filter: blur(5px);
+    animation: shadow-float 5s infinite ease-in-out;
+    transform: translateX(-50%);
+}
+
+.ai-robot-body {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 33px;
+    height: 35px;
+    background-color: #ecf0f1;
+    border: 2px solid #95a5a6;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3), inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.ai-robot-head {
+    position: absolute;
+    bottom: 52px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 30px;
+    background-color: #ecf0f1;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #95a5a6;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+
+.ai-robot-screen {
+    width: 85%;
+    height: 70%;
+    background-color: #1c2e4a;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 5px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+
+.ai-robot-eye {
+    width: 8px;
+    height: 8px;
+    background-color: #0d6efd;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #0d6efd, 0 0 12px #60a5fa;
+    animation: eye-blink 4s infinite ease-in-out;
+}
+
+.ai-robot-arm {
+    position: absolute;
+    bottom: 30px;
+    width: 14px;
+    height: 25px;
+    background-color: #ecf0f1;
+    border-radius: 50%;
+    z-index: -1; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border: 2px solid #95a5a6;
+}
+
+.ai-robot-arm.left {
+    left: 20px;
+    transform-origin: top center;
+    transform: rotate(25deg);
+}
+
+.ai-robot-arm.right {
+    right: 20px;
+    transform-origin: top center;
+    animation: mascot-wave 3s infinite ease-in-out;
+}
+
+@keyframes mascot-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+@keyframes shadow-float {
+    0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.2; }
+    50% { transform: translateX(-50%) scale(0.85); opacity: 0.1; }
+}
+
+@keyframes mascot-wave {
+    0%, 100% { transform: rotate(-25deg); }
+    50% { transform: rotate(-40deg); }
+}
+
+@keyframes eye-blink {
+    0%, 90%, 100% { transform: scaleY(1); opacity: 1; }
+    92% { transform: scaleY(0.1); opacity: 0.5; }
+    94% { transform: scaleY(1); opacity: 1; }
+}
+
+/* --- Estilos Balão de Fala --- */
+
+.ai-speech-bubble {
+    position: absolute;
+    bottom: 100%;
+    left: 30%;
+    background-color: #ecf0f1;
+    color: #1c2e4a;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, 10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.ai-speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 30%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #ecf0f1;
+}
+
+.ai-fab:hover .ai-speech-bubble {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
+
+.ai-speech-bubble p {
+    margin: 0;
+}
+
+

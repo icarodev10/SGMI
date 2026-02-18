@@ -1,0 +1,182 @@
+/**Header*/
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+/** 
+- VH Define largura e altura totais da viewport */
+body {
+    font-family: 'Sora', sans-serif;
+    width: 100%;
+    position: relative;
+    background-color: #efefef;
+    max-width: 100%;
+}
+
+/*-----------------------------------------------------------Form----------------------------------------------------*/
+
+#pos {
+
+    display: flex;
+    align-items: center;
+}
+
+form {
+    background-color: white;
+    width: 630px;
+    background-color: #ffffff;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    box-sizing: border-box;
+    box-shadow: 0 5px 8px 5px rgba(0, 0, 0, 0.192);
+    align-items: center;
+
+}
+
+.form {
+    margin: 120px;
+    align-items: center;
+}
+
+.modal_main{
+      display: flex;
+    justify-content: space-evenly;
+    gap: 15px;
+
+}
+
+#enviar {
+    margin-top: 15px;
+    cursor: pointer;
+    background-color: #0F548C;
+    color: #ffffff;
+}
+
+#enviar:hover {
+    opacity: 0.9;
+}
+
+.titulo {
+    text-align: center;
+    font-size: 30px;
+}
+
+#Corpo_modelo_cadastro {
+    margin: 0;
+    padding: 5px 15px 5px 15px;
+}
+
+
+#inputCEP,
+#inputRua,
+#inputBairro,
+#inputNumero {
+    margin-bottom: 11px;
+}
+
+#principal_modelo_cadastro {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#inputAddresscadas {
+    margin: 50px;
+}
+
+#Corpo_modelo_cadastro {
+    margin-bottom: 0rem !important;
+}
+
+#subname_cadas {
+    padding: 5px 15px 5px 2px;
+}
+
+#save_cadastro {
+    background-color: #284058;
+    margin: 10px 22px 10px 20px;
+}
+
+#img_left {
+    width: 100%;
+    background-image: url(../View/img/Left.svg);
+    background-size: 100%;
+    /* Reduz o tamanho da imagem para 50% */
+    background-repeat: no-repeat;
+    /* Garante que a imagem não se repita */
+    background-position: center;
+    /* Centraliza a imagem */
+    height: 100vh;
+    /* Altere a altura conforme necessário */
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: center; /* Alinha o botão à esquerda */
+    padding-left: 0;             /* Remove padding se necessário */
+    width: 100%;
+    border: none;
+}
+
+#inputCidade {
+    margin-bottom: 10px;
+}
+
+#tipo_usuario {
+    justify-items: left;
+}
+
+section {
+    display: flex;
+    height: 100vh;
+}
+
+.icons a {
+    display: flex;
+    gap: 14px;
+    color: #284058;
+    text-decoration: none;
+    margin: 20px;
+}
+#mensagemErroInserir {
+    position: fixed;
+    top: 45%;
+    right: 38%;
+    width:25%;
+    z-index: 9999;
+    padding: 10px;
+    pointer-events: none; /* opcional, se não quiser interação */
+}
+
+.number_one{
+    width: 180px;
+}
+
+.number_two_cadastro{
+    width: 200px;
+}
+
+.number_three{
+    width: 210px;
+}
+
+
+#inputSenha{
+    outline: 0;
+}
+
+
+#senhadiv i{
+    cursor: pointer;
+    position: absolute;
+    right: 5%;
+    padding: 10px;
+}
+
+#senhadiv{
+    position: relative;
+    display: flex;
+}

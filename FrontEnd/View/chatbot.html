@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- CSS personalizado da página -->
+    <link rel="stylesheet" href="../css/chatbot.css">
+    <title>Aura</title>
+</head>
+
+<body>
+    <!-- Container onde o menu externo será injetado dinamicamente -->
+    <div id="menu-container"></div>
+    <script type="module">
+        import { loadMenu } from '../components/menu.js';
+        document.addEventListener("DOMContentLoaded", () => {
+            loadMenu();
+        });
+    </script>
+
+    <!-- Efeito de partículas no fundo -->
+    <div id="particles-js"></div>
+
+    <main class="ai-agent-container">
+        <!-- Coluna Esquerda: Painel de Controle da IA -->
+        <aside class="ai-sidebar">
+            <div class="agent-profile">
+                <div class="agent-head">
+                    <div class="agent-screen">
+                        <div class="agent-eye"></div>
+                        <div class="agent-eye"></div>
+                    </div>
+                </div>
+                <h3>Aura</h3>
+                <p>Seu Agente de Manutenção Preditiva</p>
+                <div class="status-indicator">
+                    <span class="status-dot"></span>
+                    <span>Online</span>
+                </div>
+            </div>
+
+            <div class="conversation-history">
+                <h6>Histórico de Conversas</h6>
+                <ul>
+                    <li><a href="#">Análise de Falhas - PH-02</a></li>
+                    <li><a href="#">Previsão de Estoque - Setembro</a></li>
+                    <li><a href="#">Ocorrências Recentes</a></li>
+                </ul>
+            </div>
+
+            <div class="agent-tools">
+                <h6>Ferramentas Ativas</h6>
+                <span><i class="fas fa-database"></i> Acesso ao Banco de Dados</span>
+                <span><i class="fas fa-file-pdf"></i> Gerador de Relatórios</span>
+                <span><i class="fas fa-wifi"></i> Acesso à Internet</span>
+            </div>
+        </aside>
+
+        <!-- Coluna Direita: Interface de Chat -->
+        <section class="ai-chat-interface">
+            <div id="ai-chat-messages" class="chat-messages">
+                <div class="message ai-message">
+                    <p>Olá! Sou a Aura. Tenho acesso a todo o histórico de manutenção, dados de sensores em tempo real e
+                        posso gerar relatórios. Em que posso ajudar?</p>
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <div id="opcoes" class="mb-3">
+
+                    <!-- Consulta ID -->
+                    <div class="dropup me-2 d-inline-block">
+                        <a class="btn botao_filter dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            id="dropdownButtonConsulta">Consulta ID</a>
+                        <ul class="dropdown-menu" id="menuConsultaId">
+                            <li><a class="dropdown-item">Peças</a></li>
+                            <li><a class="dropdown-item">Ativos</a></li>
+                            <li><a class="dropdown-item">Sensores</a></li>
+                            <li><a class="dropdown-item">Ordens</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Total -->
+                    <div class="dropup me-2 d-inline-block">
+                        <a class="btn botao_filter dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            id="dropdownButtonTotal">Total</a>
+                        <ul class="dropdown-menu" id="menuTables"></ul>
+                    </div>
+
+                    <!-- Período -->
+                    <div class="dropup d-inline-block">
+                        <a class="btn botao_filter dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            id="dropdownButtonPeriodo">Período</a>
+                        <ul class="dropdown-menu" id="menuPeriodos"></ul>
+                    </div>
+
+                    <!-- Status -->
+                    <div class="dropup d-inline-block">
+                        <a class="btn botao_filter dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            id="dropdownButtonStatus">Status</a>
+                        <ul class="dropdown-menu" id="menuStatus"></ul>
+                    </div>
+
+                    <!-- Prioridade -->
+                    <div class="dropup d-inline-block">
+                        <a class="btn botao_filter dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            id="dropdownButtonPrioridade">Prioridade</a>
+                        <ul class="dropdown-menu" id="menuPrioridades"></ul>
+                    </div>               
+
+                </div>
+
+                <!-- Dialog + Botão -->
+                <div id="input">
+                    <div id="dialog"></div>
+                    <div id="BtnEnviar">
+                        <button type="submit" class="btn btn-primary" disabled>Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts externos -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="../JS/config.js"></script>
+    <script src="../JS/chatbot.js"></script>
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

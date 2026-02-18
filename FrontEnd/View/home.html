@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Carrega o CSS do Bootstrap para o layout e componentes. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Carrega o Font Awesome para os ícones. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Carrega seus estilos personalizados para a página home. -->
+    <link rel="stylesheet" href="../css/home.css">
+    <!-- Carrega a biblioteca Chart.js para criar os gráficos. -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <title>Bem-vindo</title>
+</head>
+
+<body>
+
+    <!-- CONTAINER DO MENU -->
+    <!-- Este div vazio será preenchido dinamicamente pelo menu.js. -->
+    <div id="menu-container"></div>
+
+    <!-- SCRIPT DE CARREGAMENTO DO MENU -->
+    <!-- 'type="module"' permite o uso de 'import'. -->
+    <script type="module">
+        // Importa a função que carrega o menu do seu componente.
+        import { loadMenu } from '../components/menu.js';
+
+        // Garante que o menu seja carregado apenas depois que o HTML da página estiver pronto.
+        document.addEventListener("DOMContentLoaded", () => {
+            loadMenu();
+        });
+    </script>
+
+    <div id="particles-js"></div>
+
+    <!-- SEÇÃO DE BOAS-VINDAS -->
+    <section class="welcome-section">
+        <div class="welcome-bg"></div>
+        <div class="welcome-overlay"></div>
+        <div class="welcome-content">
+            <div class="welcome-text">
+                <h1>Bem-vindo ao SGMI</h1>
+                <p>
+                    Sistema de Gestão de Manutenção Industrial - Monitore, gerencie e otimize
+                    todos os processos de manutenção da sua indústria em tempo real.
+                </p>
+                <div class="welcome-features">
+                    <span><i class="fas fa-box text-blue-400"></i> 24/7 Monitoramento</span>
+                    <span><i class="fas fa-chart-line text-blue-400"></i> Analytics Avançado</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GRID DO DASHBOARD -->
+    <!-- Contém os 4 cards principais com resumos de status. -->
+    <div class="dashboard-grid">
+
+        <!-- Card: Peças em estoque -->
+        <div class="card-dashboard">
+            <div class="card-header">
+                <i class="fas fa-cogs text-blue-400"></i>
+                <h2>Peças em estoque</h2>
+            </div>
+            <p class="subtitle">Resumo atualizado do inventário</p>
+            <div>
+                <!-- IDs são "alvos" para o home.js preencher com dados da API. -->
+                <div class="status-item">
+                    <span><i class="fas fa-box text-blue-400"></i> Em estoque</span>
+                    <span id="estoque-total" class="status-value" style="color:#60a5fa">0</span>
+                </div>
+                <div class="status-item">
+                    <span><i class="fas fa-arrow-down text-green-400"></i> Entrada</span>
+                    <span id="entrada-pecas" class="status-value" style="color:#4ade80">0</span>
+                </div>
+                <div class="status-item">
+                    <span><i class="fas fa-arrow-up text-red-400"></i> Saída</span>
+                    <span id="saida-pecas" class="status-value" style="color:#f87171">0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Container das notificações -->
+        <div class="card-dashboard" id="notificacoesCard">
+            <div class="card-header">
+                <i class="fas fa-bell text-red-400"></i>
+                <h2>Notificações e Alertas</h2>
+            </div>
+            <p class="subtitle">Últimos alertas do sistema</p>
+            <div id="notificacoesContainer">
+                <p class="text-gray-500">Nenhum alerta no momento.</p>
+            </div>
+        </div>
+
+        <!-- Card: Status dos Ativos (com container dinâmico) -->
+        <div class="card-dashboard">
+            <div class="card-header">
+                <i class="fas fa-tools text-green-400"></i>
+                <h2>Ativos Alertas</h2>
+            </div>
+            <p class="subtitle">Equipamentos que requerem atenção</p>
+            <div>
+                <div class="status-item">
+                    <span><i class="fas fa-check-circle text-green-400"></i> Total de Ativos Operacionais</span>
+                    <span id="ativos-ativo" class="status-value" style="color:#4ade80">0</span>
+                </div>
+                <!-- Container onde a lista de máquinas com alerta será injetada -->
+                <div id="ativos-com-alerta-container">
+                    <!-- O JS preencherá esta área -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Card: Status das Ordens de Manutenção (OM) -->
+        <div class="card-dashboard">
+            <div class="card-header">
+                <i class="fas fa-clipboard-list text-orange-400"></i>
+                <h2>OM Status</h2>
+            </div>
+            <p class="subtitle">Ordens de manutenção recentes</p>
+            <div>
+                <!-- IDs para o home.js preencher com dados da API /om/status. -->
+                <div class="status-item">
+                    <span><i class="fas fa-folder-open text-orange-400"></i> Aberto</span>
+                    <span id="om-aberto" class="status-value" style="color:#fb923c">0</span>
+                </div>
+                <div class="status-item">
+                    <span><i class="fas fa-spinner text-blue-400"></i> Em andamento</span>
+                    <span id="om-em-andamento" class="status-value" style="color:#60a5fa">0</span>
+                </div>
+                <div class="status-item">
+                    <span><i class="fas fa-check-circle text-green-400"></i> Concluída</span>
+                    <span id="om-concluida" class="status-value" style="color:#4ade80">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEÇÃO DOS GRÁFICOS DE SENSORES -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col center">
+                    <h2 class="fw-bold text-primary">Sensores Ambientais</h2>
+                    <p class="text-muted">Monitoramento em tempo real</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <!-- Gráfico de Temperatura -->
+                <div class="col-md-6">
+                    <div class="card bg-sensor text-white shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-thermometer-half me-2"></i>Temperatura</h5>
+                            <div class="d-flex justify-content-between mb-3">
+                                <div>
+                                    <h6>Atual</h6>
+                                    <p id="temp" class="fs-4 fw-bold">-- °C</p>
+                                </div>
+                                <div>
+                                    <h6>Média</h6>
+                                    <p id="mediaTemp" class="fs-4 fw-bold">-- °C</p>
+                                </div>
+                            </div>
+                            <!-- O elemento <canvas> é a "tela" onde o Chart.js vai desenhar o gráfico. -->
+                            <canvas id="graficoTemp" height="120"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <!-- Gráfico de Umidade -->
+                <div class="col-md-6">
+                    <div class="card bg-sensor text-white shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-tint me-2"></i>Umidade</h5>
+                            <div class="d-flex justify-content-between mb-3">
+                                <div>
+                                    <h6>Atual</h6>
+                                    <p id="umid" class="fs-4 fw-bold">-- %</p>
+                                </div>
+                                <div>
+                                    <h6>Média</h6>
+                                    <p id="mediaUmid" class="fs-4 fw-bold">-- %</p>
+                                </div>
+                            </div>
+                            <canvas id="graficoUmid" height="120"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para Resposta do CHATBOT -->
+    <div class="modal fade" id="geminiAnalysisModal" tabindex="-1" aria-labelledby="geminiModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content modal-content-ai">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="geminiModalLabel"><i class="fas fa-brain me-2"></i>Análise de
+                        Diagnóstico por IA</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Ativo:</strong> <span id="gemini-asset-name"></span></p>
+                    <p><strong>Status:</strong> <span id="gemini-asset-status"></span></p>
+                    <hr>
+                    <div id="gemini-response" class="text-left">
+                        <!-- O conteúdo da análise da IA será preenchido aqui -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Container do Assistente de IA -->
+    <div id="ai-chatbot-container">
+        <!-- O Mascote Robô -->
+        <div id="ai-chatbot-fab" class="ai-fab" onclick="window.location.href='chatbot.html'">
+            <div class="ai-robot-mascot">
+                <div class="ai-robot-shadow"></div>
+                <div class="ai-robot-arm left"></div>
+                <div class="ai-robot-arm right"></div>
+                <div class="ai-robot-body"></div>
+                <div class="ai-robot-head">
+                    <div class="ai-robot-screen">
+                        <div class="ai-robot-eye left"></div>
+                        <div class="ai-robot-eye right"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="ai-speech-bubble">
+                <p>Precisa de ajuda? <br> Clique em mim!</p>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+<!--  Particula  -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+<!--  carrega o arquivo de configuração -->
+<script src="../JS/config.js"></script>
+
+<!-- Carrega o JavaScript do dashboard. -->
+<script src="../JS/home.js"></script>
+<!-- Carrega o JavaScript do Bootstrap. -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</html>

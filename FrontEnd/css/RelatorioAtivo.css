@@ -1,0 +1,453 @@
+/**Header*/
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+/** 
+- VH Define largura e altura totais da viewport */
+body {
+    font-family: 'Sora', sans-serif;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: #efefef;
+    max-width: 100%;
+}
+
+/* Deixa o scroll mais suave da web*/
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    width: 100%;
+}
+
+btn-primary {
+    color: #2C3E50;
+}
+
+/*--------------------------------------------------Header 1---------------------------------------------------*/
+#header-desktop {
+    background-color: #2C3E50;
+    height: 60px;
+}
+
+
+.nav-item .nav-link {
+    color: rgb(255, 255, 255) !important;
+    position: relative;
+    padding-bottom: 5px;
+    font-weight: bold;
+
+}
+
+/* Linha animada no hover */
+.nav-item .item-navegacao::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: rgb(255, 255, 255);
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-item .item-navegacao:hover::after {
+    width: 100%;
+}
+
+#login-icon {
+    margin-top: 8px;
+}
+
+#login-icon a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.nav-item {
+    margin: -10px 40px 0 0;
+}
+
+.navbar-brand img {
+    margin-top: -20px;
+    max-width: 60%;
+}
+
+/**--------------------------------------------------------------header 2-----------------------------------------------------------*/
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.geral {
+    display: flex;
+    gap: 5px;
+}
+
+.rt {
+    background-color: #efefef;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 10px 10px 30px;
+}
+
+.titulo1 {
+    font-weight: bold
+}
+
+/*--------------------------------------------------Filtro---------------------------------------------------*/
+
+#filterDropdown {
+    color: #758e9f;
+}
+
+#filterDropdown:hover {
+    color: #687d8b;
+}
+
+
+
+
+.dropfiltro {
+    position: absolute;
+    top: 60px;
+    right: 5px;
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    width: 200px;
+    padding: 10px;
+    display: none;
+}
+.dropfiltro-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.dropfiltro h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1;
+}
+.close-btn {
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
+    background: none;
+    color: #888;
+}
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1px;
+    margin-top: 10px;
+}
+.search-container input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 5px;
+}
+.search-container i {
+    color: #888;
+    margin-left: 5px;
+}
+.dropfiltro ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+.dropfiltro ul li {
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+.dropfiltro ul li:hover {
+    background: #f1f1f1;
+}
+.history-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.icons a {
+    display: flex;
+    gap: 14px;
+    color: #284058;
+    text-decoration: none;
+}
+
+/*--------------------------------------------------Relatório de Desempenho---------------------------------------------------*/
+
+.container2 {
+   
+    justify-content: center;
+    align-items: center;
+    padding:  0 40px;
+    margin-bottom: 100px;
+    margin-top: 20px;
+}
+
+/*div para titulo e button*/
+.titulo{
+    display: flex;
+    width: 100%;
+    padding: 0 5px;
+    font-weight: bold
+}
+/*para o h3 ocupar metade para o posicionamento do button ficar no local*/
+.titulo h3{
+    width: 50%;
+}
+/*div para posicionar*/
+#ButtonAdd{
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+}
+
+#button_cascata {
+    background-color: #86b499;
+    color: #efefef;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    width: 90px;
+    box-shadow: 2px 2px #3e3e3e;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+#button_cascata2 {
+    color: #efefef;
+    border: none;
+    cursor: pointer;
+    background: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+/*----------------------------------------------Modal Formulario -------------------------------------------*/
+
+
+#Corpo_modelo {
+    margin: 0;
+    padding: 15px 15px 15px 15px;
+}
+
+#principal_modelo {
+    display: flex;
+}
+
+#inputAddress {
+    margin: 50px;
+}
+
+#Corpo_modelo {
+    margin-bottom: 0rem !important;
+}
+
+#rodape_modelo button {
+    margin: 0 10px;
+    gap: 15px;
+}
+
+#save_cadastro {
+    background-color: #284058;
+    color: white;
+}
+
+.number_one2{
+    width:100%;
+}
+
+
+/*--------------------------------------------------Tabela---------------------------------------------------*/
+/*--------------------------------------------------
+                TABELA PRINCIPAL
+---------------------------------------------------*/
+
+.table-container {
+    width: 100%;
+    max-width: 97%;
+    background: #2c3e50;
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    overflow-x: auto; /* Garantir responsividade somente no desktop */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1100px;  /* Mantém estrutura em desktops menores */
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 3px;
+    text-align: left;
+}
+
+td {
+    background-color: #f9f9f9;
+    border-bottom: none;
+}
+
+/* Campos especiais */
+#vanechline {
+    border: none;
+    width: 20px;
+    text-align: left;
+    border-radius: 10px;
+}
+
+#total {
+    background: #2c3e50;
+    border: none;
+    color: #ccc;
+    border-radius: 10px;
+}
+
+/* Cabeçalho */
+th {
+    background-color: #2c3e50;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Colunas estreitas */
+#smalcolum {
+    width: 40px;
+}
+
+#center {
+    vertical-align: middle;
+    text-align: center;
+    padding: 0;
+    width: 70px;
+    border-bottom: none;
+}
+
+#center button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2px;
+}
+
+/* Dropdown */
+.status-dropdown {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/*--------------------------------------------------
+                BOTÕES DA TABELA
+---------------------------------------------------*/
+
+.delete-btn,
+.edit-btn {
+    margin: 1px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-btn {
+    color: red;
+    font-size: 25px;
+}
+
+.edit-btn {
+    color: #284058;
+    font-size: 25px;
+}
+
+/*--------------------------------------------------
+                BUTTON_MAIN / PAGINAÇÃO
+---------------------------------------------------*/
+
+#button_main {
+    display: flex;
+    flex-direction: column;
+}
+
+.page-line {
+    width: 30px;
+    height: 5px;
+    background-color: gray;
+    border: none;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+.active-line {
+    background-color: blue;
+}
+
+.arrow-btn {
+    font-size: 20px;
+    padding: 5px 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.arrow-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/*--------------------------------------------------
+    RESPONSIVIDADE SOMENTE PARA DESKTOP
+---------------------------------------------------*/
+
+/* Desktop grande (até 1500px) */
+@media (max-width: 1500px) {
+    th { font-size: 17px; }
+    td { font-size: 15px; }
+}
+
+/* Notebook padrão (até 1300px) */
+@media (max-width: 1300px) {
+    table { min-width: 1000px; }
+    th { font-size: 16px; }
+    td { font-size: 14px; }
+}
+
+/* Notebook pequeno (até 1100px) */
+@media (max-width: 1100px) {
+    table { min-width: 900px; }
+    th { font-size: 15px; }
+    td { font-size: 13px; }
+}

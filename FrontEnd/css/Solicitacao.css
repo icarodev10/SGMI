@@ -1,0 +1,168 @@
+#header-desktop {
+  background-color: #2C3E50;
+  height: 60px;
+}
+
+
+
+.nav-item .nav-link {
+  color: rgb(255, 255, 255) !important;
+  position: relative;
+  padding-bottom: 5px;
+  font-weight: bold;
+
+}
+
+/* Linha animada no hover */
+.nav-item .item-navegacao::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: rgb(255, 255, 255);
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-item .item-navegacao:hover::after {
+  width: 100%;
+}
+
+#login-icon {
+  margin-top: 8px;
+}
+
+#login-icon a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+
+
+.nav-item {
+  margin: -10px 40px 0 0;
+}
+
+.navbar-brand img {
+  margin-top: -20px;
+  max-width: 60%;
+}
+
+/*fim do header*/
+
+
+/*Titulo*/
+
+.titulo1 {
+  width: 95%;
+  padding: 0 5px;
+  font-weight: bold;
+  padding: 30px 10px 30px 10px;
+  margin-left: 40px;
+}
+
+
+/*Modal*/
+#page_solicitacao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal_solicitacao {
+  width: 95%;
+  background-color: #2c3e50;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#conteudo {
+  display: flex;
+  justify-content: space-around;
+}
+
+#divisao_one {
+  width: 40%;
+}
+
+#divisao_two {
+  width: 40%;
+}
+
+.inputs_solitacao input {
+  width: 100%;
+  margin: 0px 0 5px 0;
+  border: #a9a9a953 1px solid;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.inputs_solitacao label {
+  color: #555;
+  font-weight: bold;
+  margin: 5px 0 5px 0;
+}
+
+.custom-textarea {
+  width: 100%;
+  /* Largura ajustável */
+  height: 250px;
+  /* Altura fixa */
+  resize: none;
+  /* Impede o redimensionamento manual */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow-y: auto;
+  /* Adiciona scroll caso o texto ultrapasse o tamanho */
+  word-wrap: break-word;
+  /* Garante que o texto quebre corretamente */
+}
+
+#box_botoes {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  margin: 0 40px;
+}
+
+#Enviar {
+  background-color: #2C3E50;
+  color: white;
+  border: 1px solid white;
+
+}
+
+
+#id_Ativo {
+  border-radius: 5px;
+  padding: 5px;
+  border-color: #2c3e5016;
+  width: 100%;
+  cursor: pointer;
+  margin: 5px 0 5px 0;
+  flex-direction: column;
+}
+
+.form-label {
+  font-weight: bold;
+  color: #555;
+}
+
+.ativos {
+  margin-bottom: -10px;
+}
+
+#solicitanteNome{
+    border-radius: 5px;
+  padding: 5px;
+  border-color: #2c3e5016;
+  width: 100%;
+  cursor: pointer;
+  margin: 5px 0 5px 0;
+  flex-direction: column;
+}

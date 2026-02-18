@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="../css/Perfil.css">
+</head>
+
+<body>
+
+    <div class="icon">
+        <a href="../View/home.html">
+            <i class="fa-solid fa-arrow-left fa-2x"></i>
+        </a>
+    </div>
+    <div class="background"></div>
+    <div class="main-container">
+        <div class="profile-card">
+            <img src="../View/img/perfil.jpg" alt="Foto de perfil" id="profile-pic">
+            <span id="foto_perfil"></span>
+            <div class="nome">
+
+                <span id="nome"></span>
+                <span id="cargo"></span> <!-- cargo vai aparecer aqui -->
+                
+            </div>
+            <div id="logoff">
+                <a href="../Lp Cypher 04/index.html">
+                    <i>Logoff</i>
+                </a>
+            </div>
+
+        </div>
+        <div class="form-section">
+            <h3>Dados Pessoais:</h3>
+            <div id="threediv">
+                <div id="onediv">
+                    <div class="form-group">
+                        <label>ID:</label>
+                        <input type="text" id="id_cadastro" placeholder="ID" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Login:</label>
+                        <input type="text" id="login" placeholder="Login" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Senha:</label>
+                        <input type="text" id="senha" placeholder="Senha" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Email:</label>
+                        <input type="text" id="email" placeholder="Email" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>CPF:</label>
+                        <input type="text" id="cpf" placeholder="CPF" readonly>
+                    </div>
+                </div>
+
+                <div id="twodiv">
+                    <div class="form-group">
+                        <label>Sexo:</label>
+                        <input type="text" id="sexo" placeholder="Sexo" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>CEP:</label>
+                        <input type="text" id="cep" placeholder="CEP" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Complemento:</label>
+                        <input type="text" id="complemento" placeholder="Complemento" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Telefone:</label>
+                        <input type="text" id="telefone" placeholder="Telefone" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Data de nascimento:</label>
+                        <input type="text" id="data_nascimento" placeholder="Data de nascimento" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-----------------------------Form Delete---------------------------------------->
+
+        <!-- MODAL -->
+        <div class="modal fade" id="DeleteModal" tabindex="-1" aria-labelledby="exampleModaldelete" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModaldelete">Deletar Usuário</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form id="delete-perfil">
+                        <div class="modal-body">
+                            <div class="col-12 mb-3">
+                                <label for="id_delete_perfil" class="form-label">ID</label>
+                                <input type="text" class="form-control" id="id_delete_perfil" placeholder="Digite o ID">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                            <button type="submit" class="btn btn-primary">Deletar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-----------------------------Form Update---------------------------------------->
+
+        <div class="modal fade" id="UpdateModal" tabindex="-1" aria-labelledby="exampleModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModal">Atualizar Usuarios</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form id="update-perfil">
+                            <div id="colum-one">
+
+                                <!-- ID -->
+                                <div class="col-12 mb-3 modal-body" id="Corpo_modelo">
+                                    <label for="inputID formFile" class="form-label">ID</label>
+                                    <input type="text" class="form-control" id="id_cadastro" placeholder="Digite o ID">
+                                </div>
+
+                                <!-- Nome -->
+                                <div class="col-12 mb-3 modal-body" id="Corpo_modelo">
+                                    <label for="inputNome formFile" class="form-label">Nome</label>
+                                    <input type="text" class="form-control" id="Nome_update"
+                                        placeholder="Digite o Nome">
+                                </div>
+
+                                <!-- Login -->
+                                <div class="col-12 mb-3 modal-body" id="Corpo_modelo">
+                                    <label for="inputLogin formFile" class="form-label">Login</label>
+                                    <input type="text" class="form-control" id="Login_update"
+                                        placeholder="Digite o Login">
+                                </div>
+
+                                <!-- Senha -->
+                                <div class="col-12 mb-3 modal-body" id="Corpo_modelo">
+                                    <label for="inputSenha formFile" class="form-label">Senha</label>
+                                    <input type="text" class="form-control" id="Senha_update"
+                                        placeholder="Digite o Senha">
+                                </div>
+
+                                <!-- Email -->
+                                <div class="col-12 mb-3 modal-body" id="Corpo_modelo">
+                                    <label for="inputE-mail formFile" class="form-label">E-mail</label>
+                                    <input type="email" class="form-control" id="Email_update"
+                                        placeholder="Digite o Email">
+                                </div>
+
+                                <!-- CPF -->
+                                <div class="col-12 mb-3 modal-body" id="Corpo_modelo">
+                                    <label for="inputCPF formFile" class="form-label">CPF</label>
+                                    <input type="number" class="form-control" id="CPF_update"
+                                        placeholder="Digite o CPF">
+                                </div>
+
+                            </div>
+                            <div id="colum-two">
+
+                                <!-- Sexo -->
+                                <div class="col-12 mb-3 modal-body" id="Corpo_modelo">
+                                    <label for="inputSexo formFile" class="form-label">Sexo</label>
+                                    <input type="text" class="form-control" id="Sexo_update"
+                                        placeholder="Digite o Sexo">
+                                </div>
+
+                                <!-- CEP -->
+                                <div class="col-12 mb-3 modal-body" id="Corpo_modelo">
+                                    <label for="inputCEP formFile" class="form-label">CEP</label>
+                                    <input type="number" class="form-control" id="CEP_update"
+                                        placeholder="Digite o CEP">
+                                </div>
+
+                                <!-- Complemento -->
+                                <div class="col-12 mb-3 modal-body" id="Corpo_modelo">
+                                    <label for="inputComplemento formFile" class="form-label">Complemento</label>
+                                    <input type="text" class="form-control" id="Complemento_update"
+                                        placeholder="Digite o Complemento">
+                                </div>
+
+                                <!-- Telefone -->
+                                <div class="col-12 mb-3 modal-body" id="Corpo_modelo">
+                                    <label for="inputTelefone formFile" class="form-label">Telefone</label>
+                                    <input type="number" class="form-control" id="Telefone_update"
+                                        placeholder="Digite o Telefone">
+                                </div>
+
+                                <!-- Data de Nascimento -->
+                                <div class="col-12 mb-3 modal-body" id="Corpo_modelo">
+                                    <label for="inputDate" class="form-label" id="nascimento">Data de
+                                        Nascimento</label>
+                                    <input type="date" class="form-control" id="data_nascimento_update">
+                                </div>
+
+                            </div>
+                        </form>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary" id="btn-submit-update">Save
+                                changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+
+
+    <script src="../JS/perfil.js"></script>
+</body>
+
+</html>

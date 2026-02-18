@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login da Cypher</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!--  carrega o arquivo de configuração -->
+  <script src="../JS/config.js"></script>
+  <script src="../JS/login.js"></script>
+</head>
+
+<body>
+
+  <!-- SPLASH SCREEN -->
+  <div id="splash-screen" class="splash-container">
+    <div class="splash-overlay"></div>
+
+    <div class="splash-content">
+
+      <div class="triangle-wrapper">
+        <svg width="180" height="180" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+          <defs>
+            <marker id="arrowhead-flush" markerWidth="10" markerHeight="10" refX="0" refY="5" orient="auto"
+              markerUnits="userSpaceOnUse">
+              <path d="M 0 0 L 6 5 L 0 10" fill="none" stroke="#BDEEFF" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </marker>
+          </defs>
+
+          <g stroke="#BDEEFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+
+            <!-- Triângulo -->
+            <path class="svg-draw" d="M50 30 L74 70 L26 70 Z" stroke-width="1.5" />
+
+            <!-- Linha 1 -->
+            <path class="svg-draw" d="M 50 15 L 89 84" marker-end="url(#arrowhead-flush)" />
+
+            <!-- Linha 2 -->
+            <path class="svg-draw" d="M 85 78 L 8 78" marker-end="url(#arrowhead-flush)" />
+
+            <!-- Linha 3 -->
+            <path class="svg-draw" d="M 15 78 L 53 13" marker-end="url(#arrowhead-flush)" />
+
+          </g>
+        </svg>
+
+      </div>
+
+      <div class="text-wrapper">
+        <h2 class="brand-name">Cypher</h2>
+        <div class="brand-line"></div>
+      </div>
+
+      <div class="loading-dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MAIN SCREEN (inicia escondida pelo JS) -->
+  <div id="main-screen" class="main-wrapper hidden" aria-hidden="true">
+
+    <!-- Fundo -->
+    <div class="background_container">
+      <main class="content">
+        <img src="../View/img/Fundo.png" class="imagem-fundo">
+      </main>
+    </div>
+
+    <!-- Conteúdo principal -->
+    <div id="container_principal" class="container d-flex justify-content-center align-items-center min-vh-100">
+      <div id="formulario" class="card shadow-lg p-4 rounded">
+
+        <div class="text-center mb-4">
+          <img src="../View/img/Logo_text.svg" class="imagem-logo" width="150">
+        </div>
+
+        <form id="formCadastro">
+          <div class="mb-3">
+            <label class="form-label">E-mail</label>
+            <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Senha</label>
+            <input type="password" class="form-control" id="password" placeholder="Digite sua senha" required>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheckbox">
+              <label id="caixa" class="form-check-label" for="exampleCheckbox">Lembre de mim</label>
+            </div>
+            <a id="esqueci" href="#" class="text-white">Esqueci minha senha</a>
+          </div>
+
+          <div id="mensagem-erro" class="text-danger text-center mt-3"></div>
+
+          <button id="botao" type="submit" class="btn btn-cypher w-100 mt-3">Login</button>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

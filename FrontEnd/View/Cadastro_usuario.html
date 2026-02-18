@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Importa o CSS do Bootstrap 5 para estilização responsiva -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Importa os ícones do Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- CSS personalizado para estilização extra -->
+    <link rel="stylesheet" href="../css/cadastro.css">
+
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <section>
+        <!-- Ícone de voltar para página inicial -->
+        <div class="icons">
+            <a href="../View/home.html">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+        </div>
+
+        <div id="pos">
+            <div class="form">
+                <!-- Formulário de cadastro de usuário -->
+                <form action="" id="userForm">
+                    <h2 class="titulo">Cadastro de Usuário</h2>
+
+                    <!-- Área para mensagens de alerta/sucesso (hidden por padrão) -->
+                    <div id="mensagem" class="alert d-none mx-3" role="alert"></div>
+
+                    <!-- Container principal do formulário -->
+                    <div class="modal_main" id="principal_modelo_cadastro">
+
+                        <!-- Primeira coluna do formulário -->
+                        <div class="number_one">
+                            <!-- Campo Nome -->
+                            <div class="col-12 mb-3 modal-body">
+                                <label for="inputName" class="form-label" id="nome">Nome</label>
+                                <input type="text" class="form-control" name="Nome" id="inputName"
+                                    placeholder="Digite o nome">
+                            </div>
+
+                            <!-- Campo CPF -->
+                            <div class="col-12 mb-3 modal-body">
+                                <label for="inputCPF" class="form-label" id="CPF">CPF</label>
+                                <input type="text" class="form-control" name="CPF" id="inputCPF"
+                                    placeholder="Digite o seu CPF">
+                            </div>
+
+                            <!-- Campo Telefone -->
+                            <div class="col-12 mb-3 modal-body">
+                                <label for="inputPhone" class="form-label" id="celular">Telefone</label>
+                                <input type="text" class="form-control" name="Telefone" id="inputPhone"
+                                    placeholder="Digite o seu telefone">
+                            </div>
+
+                            <!-- Campo Data de Nascimento -->
+                            <div class="col-12 mb-3 modal-body">
+                                <label for="inputDate" class="form-label" id="nascimento">Data de Nascimento</label>
+                                <input type="date" class="form-control" name="Data_Nascimento" id="inputDate">
+                            </div>
+
+                            <!-- Seleção de Sexo -->
+                            <div class="col-12 mb-3 modal-body">
+                                <label for="inputSexo" class="form-label" id="sexo">Sexo</label>
+                                <select class="form-select" name="Sexo" id="inputSexo">
+                                    <option value="Masculino" selected>Masculino</option>
+                                    <option value="Feminino">Feminino</option>
+                                </select>
+                            </div>
+
+                            <!-- Campo Cargo -->
+                            <div class="col-12 mb-3 modal-body">
+                                <label for="inputCargo" class="form-label" id="cargo">Cargo</label>
+                                <input type="text" class="form-control" name="Cargo" id="inputCargo"
+                                    placeholder="Digite o Cargo">
+                            </div>
+                        </div>
+
+                        <!-- Segunda coluna do formulário -->
+                        <div class="number_two_cadastro">
+                            <!-- Campo Departamento -->
+                            <div class="col-12 mb-3 modal-body">
+                                <label for="inputDepartamento" class="form-label" id="departamento">Departamento</label>
+                                <input type="text" class="form-control" name="Departamento" id="inputDepartamento"
+                                    placeholder="Digite o Departamento">
+                            </div>
+
+                            <!-- Campos de Endereço (CEP, Cidade, Bairro, Rua, Número, Complemento) -->
+                            <div class="col-12 mb-3 modal-body">
+                                <label class="form-label" id="endereco">Endereço</label>
+                                <input type="text" class="form-control mb-1" name="CEP" id="inputCEP"
+                                    placeholder="Digite o CEP">
+                                <!-- Os campos abaixo são readonly pois serão preenchidos automaticamente pelo CEP -->
+                                <input type="text" class="form-control mb-1" name="Cidade" id="inputCidade"
+                                    placeholder="Cidade" readonly>
+                                <input type="text" class="form-control mb-1" name="Bairro" id="inputBairro"
+                                    placeholder="Bairro" readonly>
+                                <input type="text" class="form-control mb-1" name="Rua" id="inputRua" placeholder="Rua"
+                                    readonly>
+                                <input type="text" class="form-control mb-1" name="Numero" id="inputNumero"
+                                    placeholder="Numero">
+                                <input type="text" class="form-control" name="Complemento" id="inputComplemento"
+                                    placeholder="Complemento">
+                            </div>
+
+                            <!-- Upload de Foto do Usuário com preview -->
+                            <div class="col-12 mb-3 modal-body">
+                                <label for="foto_usuario" class="form-label">Foto</label>
+                                <input type="file" class="form-control" name="Foto_Usuario" id="foto_usuario"
+                                    accept="image/*">
+                                <!-- Preview da imagem selecionada (fica escondido até ser carregada uma imagem) -->
+                                <img id="foto_preview" src="#" alt="Preview da Foto" class="img-thumbnail mt-2 d-none"
+                                    style="max-width: 150px;">
+                            </div>
+                        </div>
+
+                        <!-- Terceira coluna do formulário -->
+                        <div class="number_three">
+                            <!-- Campo E-mail -->
+                            <div class="col-12 mb-3 modal-body">
+                                <label for="inputEmail" class="form-label" id="email_cadastro">E-mail</label>
+                                <input type="email" class="form-control" name="Email" id="inputEmail"
+                                    placeholder="Digite o seu e-mail">
+                            </div>
+
+                            <!-- Campo Senha com botão para mostrar/ocultar -->
+                            <div class="col-12 mb-3 modal-body">
+                                <label for="inputSenha" class="form-label" id="senha_cadastro">Senha</label>
+                                <div id="senhadiv">
+                                    <input type="password" class="form-control" name="Senha" id="inputSenha"
+                                        placeholder="Digite sua Senha">
+                                    <!-- Ícone para alternar visibilidade da senha -->
+                                    <i class="fa-solid fa-eye" id="btn-senha" onclick="mostrarSenha()"></i>
+                                </div>
+                            </div>
+
+                            <!-- Campo Username (login do usuário) -->
+                            <div class="col-12 mb-3 modal-body">
+                                <label for="inputUsername" class="form-label" id="username">Username</label>
+                                <input type="text" class="form-control" name="Login" id="inputUsername"
+                                    placeholder="Digite o Username">
+                            </div>
+
+                            <!-- Campo Data de Admissão -->
+                            <div class="col-12 mb-3 modal-body">
+                                <label for="inputAdmissao" class="form-label" id="admissao">Data de Admissão</label>
+                                <input type="date" class="form-control" name="Data_Admissao" id="inputAdmissao">
+                            </div>
+
+                            <!-- Campo Valor Hora -->
+                            <div class="col-12 mb-3 modal-body">
+                                <label for="Valor_Hora" class="form-label" id="Valor_Hora">Valor Hora</label>
+                                <input type="text" class="form-control" name="Valor_Hora" id="Valor_Hora"
+                                    placeholder="Digite o Valor Hora">
+                            </div>
+
+                            <!-- Seleção de Tipo de Usuário -->
+                            <div class="col-12 mb-3 modal-body">
+                                <label for="inputtipo" class="form-label" id="tipo_usuario">Tipo Usuário</label>
+                                <select class="form-select" name="Tipo_Usuario" id="inputtipo">
+                                    <option value="Usuario">Usuário</option>
+                                    <option value="Administrador">Administrador</option>
+                                    <option value="Gestor">Gestor</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rodapé do modal com botão Salvar e spinner de carregamento -->
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" id="save_cadastro">Salvar</button>
+
+                        <!-- Spinner mostrado enquanto envia os dados -->
+                        <div class="spinner-border text-primary d-none" role="status" id="loadingSpinner">
+                            <span class="visually-hidden">Carregando...</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Área para imagem decorativa à esquerda (configurada via CSS) -->
+        <div id="img_left"></div>
+    </section>
+
+    <!-- Script JS que controla o formulário (validações, envio, CEP, preview foto etc.) -->
+    <script src="../JS/Cadastro_usuario.js"></script>
+</body>
+
+</html>

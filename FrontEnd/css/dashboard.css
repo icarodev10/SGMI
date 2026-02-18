@@ -1,0 +1,238 @@
+/*--------------------------------------------------Reset e Configurações Globais---------------------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Scroll suave */
+}
+
+body {
+    font-family: 'Sora', sans-serif;
+    width: 100%;
+    min-height: 100vh; /* Mantém scroll correto */
+    position: relative;
+    background-color: #efefef;
+    max-width: 100%;
+}
+
+/*--------------------------------------------------Header---------------------------------------------------*/
+header {
+    width: 100%;
+}
+
+#header-desktop {
+    background-color: #2C3E50;
+    height: 60px;
+}
+
+.nav-item .nav-link {
+    color: #fff !important;
+    position: relative;
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Linha animada no hover */
+.nav-item .item-navegacao::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #fff;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-item .item-navegacao:hover::after {
+    width: 100%;
+}
+
+#login-icon {
+    margin-top: 8px;
+}
+
+#login-icon a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.nav-item {
+    margin: 0 40px 0 0; /* Espaçamento seguro sem negativos */
+}
+
+.navbar-brand img {
+    margin-top: -20px;
+    max-width: 60%;
+}
+
+#button_cascata {
+    color: #284058;
+}
+
+/*--------------------------------------------------Dashboard---------------------------------------------------*/
+
+
+/* Container de seção */
+section {
+  animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Título principal ---------- */
+h2.fw-bold.text-primary {
+  color: #5f899e !important;
+  font-size: 2.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade do título */
+@media (max-width: 768px) {
+  h2.fw-bold.text-primary {
+    font-size: 2rem;
+  }
+}
+
+/* ---------- Grid do dashboard ---------- */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  padding: 1.5rem;
+  padding-left: 7rem;
+  padding-right: 7rem;
+    color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---------- Cards do dashboard ---------- */
+.card-dashboard {
+  border-radius: 16px;
+  background: linear-gradient(135deg, #1c2e4a, #2a4b68);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.25rem;
+  color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-dashboard:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 0 25px rgba(95, 137, 158, 0.3);
+}
+
+/* ---------- Cabeçalho do card ---------- */
+.card-dashboard .card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.card-dashboard .card-header i {
+  font-size: 1.3rem;
+  animation: pulseIcon 2s infinite;
+}
+
+.card-dashboard .card-header h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ---------- Subtítulo do card ---------- */
+.card-dashboard p.subtitle {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #cfd8dc;
+  margin-bottom: 0.75rem;
+}
+
+/* ---------- Itens internos ---------- */
+.card-dashboard .status-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.card-dashboard .status-item span {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  
+}
+
+.card-dashboard .status-item i {
+  font-size: 0.9rem;
+}
+
+.card-dashboard .status-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.03);
+}
+
+/* ---------- Valor destacado ---------- */
+.card-dashboard .status-value {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* ---------- Canvas (gráficos) ---------- */
+canvas {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 4px;
+  margin-top: 0.75rem;
+  
+}
+
+.color{
+    color: #cfd8dc;
+}
+
+/* ---------- Animação de ícones ---------- */
+@keyframes pulseIcon {
+  0% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.9; }
+}
+
+#particles-js {
+  position: fixed; /* Fixa na tela, não rola com o conteúdo */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Essencial: coloca o canvas atrás de todo o resto */
+}
