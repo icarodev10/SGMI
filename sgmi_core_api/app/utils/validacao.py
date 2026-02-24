@@ -27,7 +27,9 @@ from app.utils.validar_solicitacao import validar_solicitacao
 from app.utils.validar_empresa import validar_empresa
 from app.utils.validar_solicitar_peca import validar_solicitar_peca
 
-# Conexão com o banco (esse já estava certo, mas mantive pra garantir)
+import os
+
+# Conexão com o banco 
 from app.database.conectar import connect_db
 
 def dados_valida_cadastro(dados, acao):
@@ -38,8 +40,8 @@ def dados_valida_cadastro(dados, acao):
     print(f"[Checkpoint] Iniciando validação de cadastro para a ação: {acao}")
     erros = []
     
-    # NOTA: O ideal é carregar este token de um arquivo de configuração ou variável de ambiente.
-    token = "18020|7WIXRgVBypbFckRMRCBXPKW5gNavFeI4"
+    # Puxa o token direto da variável de ambiente de forma segura
+    token = os.getenv("TOKEN_VALIDACAO_API")
     
     conexao = None
     cursor = None
