@@ -5,6 +5,7 @@ import smtplib
 import random
 import string
 import re
+import os
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from flask_mail import Message
@@ -24,6 +25,9 @@ def set_mail(mail_obj):
 # -----------------------------------------------------------------------------
 # AUXILIARES
 # -----------------------------------------------------------------------------
+
+remetente = os.getenv('MAIL_USER')
+
 def get_gestores_emails():
     """Busca e-mails de todos os gestores/admins."""
     conn = connect_db()
@@ -61,7 +65,7 @@ def enviar_email_funcionario(destino, nome_funcionario, id_ordem):
 
         msg = Message(
             subject=f"Você foi atribuído à Ordem de Serviço #{id_ordem}",
-            sender='teamcyphercompany@gmail.com',
+            sender=remetente,
             recipients=[destino]
         )
 
@@ -84,7 +88,7 @@ def enviar_email_boas_vindas(email_destino, nome_funcionario, dados, senha_origi
     try:
         msg = Message(
             "Bem-vindo ao CYPHER",
-            sender='teamcyphercompany@gmail.com',
+            sender=remetente,
             recipients=[email_destino]
         )
         msg.html = f"""
@@ -110,7 +114,7 @@ def enviar_email_solicitacao(solicitacao):
 
         msg = Message(
             f"Nova Solicitação: {solicitacao.get('Titulo', 'Sem título')}",
-            sender='teamcyphercompany@gmail.com',
+            sender=remetente,
             recipients=gestores
         )
         msg.html = f"""
@@ -124,33 +128,3 @@ def enviar_email_solicitacao(solicitacao):
     except Exception as e:
         print(f"Erro email solicitação: {e}")
 
-# -----------------------------------------------------------------------------
-# ENVIO DE E-MAILS (SMTP PURO - LEGADO/BACKUP)
-# -----------------------------------------------------------------------------
-def enviar_email_empresa(email_destino, email_login, senha_gerada, nome_empresa):
-    """Envia credenciais da empresa via SMTP direto (sem Flask-Mail)."""
-    remetente = "teamcyphercompany@gmail.com"
-    senha_app = "basw bmpz auev htzs"  # SUA SENHA DE APP
-
-    msg = MIMEMultipart()
-    msg["From"] = remetente
-    msg["To"] = email_destino
-    msg["Subject"] = "Acesso ao Sistema Cypher"
-
-    corpo = f"""
-    Olá, {nome_empresa}!
-    Login: {email_login}
-    Senha: {senha_gerada}
-    """
-    msg.attach(MIMEText(corpo, "plain"))
-
-    try:
-        with smtplib.SMTP("smtp.gmail.com", 587) as server:
-            server.starttls()
-            server.login(remetente, senha_app)
-            server.send_message(msg)
-            print("Email empresa enviado (SMTP)!")
-            return True
-    except Exception as e:
-        print(f"Erro SMTP empresa: {e}")
-        return False

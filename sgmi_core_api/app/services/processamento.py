@@ -31,7 +31,7 @@ from app.database.atualizar import generic_update
 from app.database.deletar import generic_delete
 
 # 4. Módulos UTILITÁRIOS
-from app.services.email_utils import enviar_email_boas_vindas, enviar_email_empresa
+from app.services.email_utils import enviar_email_boas_vindas
 from app.database.conectar import connect_db
 from datetime import datetime
 from decimal import Decimal
