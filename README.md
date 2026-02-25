@@ -33,7 +33,7 @@ O sistema foi construído seguindo lógicas reais da indústria:
 ---
 
 ## ⚙️ Como executar o projeto localmente (How to Run)
-```bash
+
 ## Repositório:
 
 1. Execute o comando git clone https://github.com/icarodev10/SGMI.git
@@ -89,7 +89,7 @@ email: admin@sgmi.com
 senha: 1234
 
 ---
-```
+
 ## 👥 Equipe de Desenvolvimento
 
 Desenvolvido no SENAI por:
