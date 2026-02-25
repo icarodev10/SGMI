@@ -576,15 +576,15 @@ def get_ativos():
         # Vincula o modelo 3D
         a['caminho_modelo_3d'] = mapa_modelos.get(a['id_Ativo'])
         
-        # --- CORREÇÃO DE BYTES (IMAGEM) ---
-        if a.get('Imagem'):
-            if isinstance(a['Imagem'], bytes):
+        # --- CORREÇÃO DINÂMICA DE BYTES  ---
+        for chave, valor in a.items():
+            if isinstance(valor, (bytes, bytearray)):
                 try:
-                    # Tenta converter direto pra texto (caso seja string salva como blob)
-                    a['Imagem'] = a['Imagem'].decode('utf-8')
-                except:
-                    # Se for binário de verdade, converte pra Base64 pra não quebrar o JSON
-                    a['Imagem'] = base64.b64encode(a['Imagem']).decode('utf-8')
+                    # Tenta converter para texto normal (resolve o problema do MEDIUMTEXT)
+                    a[chave] = valor.decode('utf-8')
+                except UnicodeDecodeError:
+                    # Se for arquivo binário mesmo (como a Imagem LONGBLOB), converte para Base64
+                    a[chave] = base64.b64encode(valor).decode('utf-8')
 
         # --- CORREÇÃO DE DATAS ---
         # O JSON também não gosta de objetos 'date', tem que virar string
