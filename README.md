@@ -18,22 +18,34 @@ Após a entrega inicial, o backend do projeto passou por uma **refatoração com
 
 <img width="1919" height="862" alt="image" src="https://github.com/user-attachments/assets/b8c58eaa-5de1-448d-828d-225926163019" />
 
+
+
 * 🔎 **Assitente IA:** Integrado com API Gemini, faz consultas nos últimos problemas do maquinário e devolve as possíveis causas e soluções.
-* 
+
+  
+  
 * 🧊 **Visualização 3D:** Modelos 3D interativos vinculados diretamente aos ativos, facilitando a identificação de componentes pela equipe de manutenção.
 
 <img width="1919" height="864" alt="image" src="https://github.com/user-attachments/assets/f1050bb7-a351-4262-a07d-a038a7330a04" />
+
+
   
   
 * 📜 **Auditoria e Histórico:** Rastreabilidade total. O sistema mantém um histórico completo de alterações em Ordens de Serviço, dados de Sensores e status das Máquinas.
-* 
+
+
+  
 * 📧 **Notificações Automatizadas:** Envio de e-mails dinâmicos para alertar usuários sobre novas ordens de serviço, status de solicitações e envio de credenciais.
+
+
 
 ## 🎥 Demo
 
 
 
 https://github.com/user-attachments/assets/9b0b292f-fb39-442f-826c-7b6859572cbb
+
+
 
 
 
@@ -57,8 +69,14 @@ O sistema foi construído seguindo lógicas reais da indústria:
 
 ## Repositório:
 
-1. Execute o comando ```bash git clone https://github.com/icarodev10/SGMI.git```
-2. Execute o comando ```bash cd SGMI```
+1. Execute o comando:
+```bash
+git clone https://github.com/icarodev10/SGMI.git
+```
+2. Execute o comando:
+```bash
+cd SGMI
+```
 
 ### 1. Banco de Dados
 1. Crie um banco de dados MySQL local chamado `sgmi` com o arquivo SQL disponível
