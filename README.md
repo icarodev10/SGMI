@@ -86,19 +86,30 @@ em SGMI/sgmi_core_api/data/codigo_cypher_banco.sql.
 ### 2. Backend (API Modular)
 1. Abra o terminal e navegue até a pasta da API: 
 
+```bash
    cd sgmi_core_api
+```
+
 
 Crie e ative um ambiente virtual:
 
-Windows: python -m venv venv e depois venv\Scripts\activate
+Windows: 
 
-Linux/Mac: python3 -m venv venv e depois source venv/bin/activate
+```bash
+python -m venv venv e depois venv\Scripts\activate
+```
 
+
+Linux/Mac:
+
+```bash
+python3 -m venv venv e depois source venv/bin/activate
+```
 Instale as dependências:
 
-
+```bash
 pip install -r requirements.txt
-
+```
 
 ⚠️ Configuração de Ambiente: Renomeie o arquivo .env.example para .env e preencha suas chaves.
 
@@ -106,7 +117,9 @@ Aviso: Os recursos de envio de E-mail e a IA  só funcionarão se as credenciais
 
 Inicie o servidor Flask:
 
+```bash
 python run.py
+```
 
 ### 3. Frontend
 
@@ -115,11 +128,15 @@ Abra um novo terminal e navegue até a pasta do Frontend:
 cd FrontEnd
 Instale as dependências do Node:
 
+```bash
 npm install
+```
 
 Inicie a aplicação:
 
+```bash
 node server.js
+```
 
 O sistema estará disponível no seu navegador em http://localhost:3000 (ou na porta configurada).
 
