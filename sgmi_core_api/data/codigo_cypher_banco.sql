@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `sgmi`.`ativos` (
   `Data_Aquisicao` DATE NOT NULL,
   `Localizacao` VARCHAR(100) NOT NULL,
   `Status` ENUM('ativo', 'inativo', 'em manutenção', 'condenado') NOT NULL,
-  `Imagem` LONGBLOB NOT NULL,
+  `Imagem` LONGBLOB NULL DEFAULT NULL,
   PRIMARY KEY (`id_Ativo`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
